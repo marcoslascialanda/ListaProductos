@@ -1,0 +1,10 @@
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\dao\Connection.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\dao\ConnectionUtils.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\dao\ProductoDAOImpl.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\exceptions\DuplicatedExceptions.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\exceptions\GenericException.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\exceptions\MISQLException.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\exceptions\NonExistsExceptions.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\dao\AdministradorDeConexiones.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\dao\ProductoDAO.java
+C:\Users\user\eclipse-workspace\java-jsweb-diciembre-clase6\dao\src\main\java\dao\TestConexion.java

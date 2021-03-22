@@ -1,0 +1,52 @@
+package servlets;
+
+import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import domain.Producto;
+import exceptions.ServiceException;
+import service.ProductoService;
+import service.ProductoServiceImpl;
+
+@WebServlet("/BuscarProductosServlet")
+public class BuscarProductosServlet extends HttpServlet {
+
+	private ProductoService ps = new ProductoServiceImpl();
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String claveBusqueda = req.getParameter("claveBusqueda");
+		
+		//validaciones!!!
+		
+		try {
+			Collection<Producto> listado = this.ps.buscarProducto(claveBusqueda);
+			
+			//sumar el total
+			Float precioTotal = listado.stream()
+			.map(x -> x.getPrecio())
+			.reduce(0f, (x,y) -> x+y);
+			
+			req.setAttribute("sumaTotal", precioTotal);
+			
+			req.setAttribute("listado", listado);
+		} catch (ServiceException e) {
+			req.setAttribute("error", e.getCause().getMessage());
+			req.setAttribute("listado", new ArrayList<>());
+		}
+		
+		//redirect!
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/jsp/listado.jsp");
+		rd.forward(req, resp);
+	}
+}
